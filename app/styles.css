@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+html, body {
+    width: 100%;
+    min-height: 100%;
+    font: normal 1rem "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: teal;
+    padding: .25rem;
+    transition: .3s color;
+}
+.link:hover {
+    color: #6699ff;
+}
+
+.table {
+    background: white;
+    max-width: 1024px;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+th {
+    font-weight: normal;
+    color: #039;
+    border-bottom: .125rem solid #6678b1;
+    padding: .6rem .5rem;
+}
+tr:hover .table__ceil:not(th) {
+    color: #6699ff;
+    background: #e8edff;
+}
+.table__ceil {
+    color: #669;
+    padding: .5rem;
+    transition: .3s linear;
+}
+.table__ceil--link {
+    text-decoration: none;
+    color: inherit;
+}
+.high-priority {
+    font-weight: bold;
+    color: orangered;
+}
+
+/* task info */
+.task-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    padding: .5rem;
+    background: cornsilk;
+}
+.task-info__item {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    border-top: 1px solid #669;
+}
+.task-info__item-name, .task-info__item-val {
+    padding: 0 .5rem;
+}
+.task-info__item-name {
+    width: 30%;
+    font-weight: bold;
+    color: #669;
+    text-transform: uppercase;
+    border-right: 1px solid #669;
+}
+.task-info__item-val {
+    width: 70%;
+}
+
+.task-info__title, .task-info__title--edit {
+    text-align: center;
+    width: 100%;
+    padding: 0.25rem;
+    border: .125rem solid transparent;
+}
+.task-info__title--edit {
+    border-color: orange;
+    background: inherit;
+    font-size: 1.5rem;
+    animation: edit 2s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes edit {
+    form { background: khaki; }
+    to { background: lightsalmon; }
+}
