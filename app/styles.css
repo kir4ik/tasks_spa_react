@@ -10,6 +10,24 @@ html, body {
     font: normal 1rem "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+.wrap {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.not-found {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    background: maroon;
+    color: floralwhite;
+}
+
 .link {
     font-size: 1.2rem;
     font-weight: bold;
@@ -23,7 +41,6 @@ html, body {
 
 .table {
     background: white;
-    max-width: 1024px;
     margin: auto;
     border-collapse: collapse;
     text-align: left;

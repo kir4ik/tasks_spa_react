@@ -1,26 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-// components
-import TaskList from './components/taskList';
-import TaskInfo from './components/tasksInfo';
-// reducers
-import reducers from './reducers';
+// pages
+import TaskListPage from './Tasks/pages/TaskListPage';
+import TaskInfoPage from './Tasks/pages/TaskInfoPage';
+// main store
+import { configureStore } from './store';
 // styles
 import './styles.css';
 
-const store = createStore(reducers, {}, applyMiddleware(thunk));
+const store = configureStore();
 const root = document.getElementById('app');
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
-                <Route exact path="/" component={TaskList} />
-                <Route path="/:id(\d+)" component={TaskInfo} />
+                <Route exact path="/" component={TaskListPage} />
+                <Route path="/:id(\d+)" component={TaskInfoPage} />
             </Switch>
         </Router>
     </Provider>,
