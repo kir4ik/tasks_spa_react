@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { getVal, dateFormat } from '../../../utils/formatData';
 
 export default ({ task, tableAgreement }) => {
+    if (task == null || typeof task !== "object") return null;
+    
     const defVal = String.fromCharCode('8212'); // mdash
     let className = 'table__ceil';
     if (task.is_high_priority) className += ' high-priority';
